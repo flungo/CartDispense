@@ -6,11 +6,10 @@ import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
-import org.bukkit.craftbukkit.entity.CraftMinecart;
-import org.bukkit.craftbukkit.entity.CraftPoweredMinecart;
-import org.bukkit.craftbukkit.entity.CraftStorageMinecart;
+import org.bukkit.entity.Minecart;
+import org.bukkit.entity.PoweredMinecart;
+import org.bukkit.entity.StorageMinecart;
 import org.bukkit.event.block.BlockDispenseEvent;
-//import org.bukkit.event.block.BlockListener;
 import org.bukkit.inventory.ItemStack;
 
 import org.bukkit.event.Listener;
@@ -35,9 +34,9 @@ public class CartBlockListener implements Listener {
 			if (checkForTrack(block.getLocation()) == true || checkForTrack(under) == true){
 				World world = block.getLocation().getWorld();
 				switch (dispenseItem.getTypeId()) {
-					 case 328:world.spawn(spawnCart, CraftMinecart.class); break;
-					 case 343:world.spawn(spawnCart, CraftPoweredMinecart.class); break;
-					 case 342:world.spawn(spawnCart, CraftStorageMinecart.class); break;
+					 case 328:world.spawn(spawnCart, Minecart.class); break;
+					 case 343:world.spawn(spawnCart, PoweredMinecart.class); break;
+					 case 342:world.spawn(spawnCart, StorageMinecart.class); break;
 				 }
 			}			
 		}
